@@ -21,6 +21,30 @@
           <source src="someVideo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <script src="index.js"></script>
+
+        <button id="fb">Share on Facebook</button>
+        <button id="li">Share on LinkedIn</button>
+
+        <script>
+            const fb = document.getElementById('fb');
+            const li = document.getElementById('li');
+            
+            function shareOnFacebook(){
+                const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://postolovski.github.io/social-media-testing/';
+                window.open(navUrl , '_blank');
+            }
+
+            function shareOnLinkedin() {
+                const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + 'https://postolovski.github.io/social-media-testing/';
+                window.open(navUrl , '_blank');
+            }
+            fb.addEventListener('click', () => {
+                shareOnFacebook();
+            });
+
+            li.addEventListener('click', () => {
+                shareOnLinkedin();
+            });
+            </script>
   </body>
 </html>
