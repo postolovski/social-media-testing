@@ -26,16 +26,6 @@
         <button id="fb">Share on Facebook</button>
         <button id="li">Share on LinkedIn</button>
 
-        <iframe
-            width="100%"
-            height="200vh"
-            src="https://www.youtube.com/embed/rBd0h-g59dg"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-        ></iframe>
-
         <script>
             const fb = document.getElementById('fb');
             const li = document.getElementById('li');
@@ -43,7 +33,9 @@
             function prepareFrame(src) {
                 var ifrm = document.createElement("iframe");
                 ifrm.setAttribute("src", src);
-                ifrm.setAttribute("X-FRAME-OPTIONS", 'SAMEORIGIN');
+                ifrm.setAttribute("width", '300vh');
+                ifrm.setAttribute("height", '200vh');
+                ifrm.setAttribute("frameborder", '0');
                 ifrm.style.width = "640px";
                 ifrm.style.height = "480px";
                 document.body.appendChild(ifrm);
