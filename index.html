@@ -12,6 +12,7 @@
     <meta property="og:description" content="Perfect weekend getaway for lorem upsum dolor in some cases tolor too" />
     <meta property="og:image" content="coverImg.png" />
     <meta property="og:video" content="someVideo.mp4" />
+    <meta property="og:video:tag" content="Video Tag Is Heree!!!!" />
 
 
   </head>
@@ -25,18 +26,38 @@
         <button id="fb">Share on Facebook</button>
         <button id="li">Share on LinkedIn</button>
 
+        <iframe
+            width="100%"
+            height="200vh"
+            src="https://www.youtube.com/embed/rBd0h-g59dg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+
         <script>
             const fb = document.getElementById('fb');
             const li = document.getElementById('li');
+
+            function prepareFrame(src) {
+                var ifrm = document.createElement("iframe");
+                ifrm.setAttribute("src", src);
+                ifrm.setAttribute("X-FRAME-OPTIONS", 'SAMEORIGIN');
+                ifrm.style.width = "640px";
+                ifrm.style.height = "480px";
+                document.body.appendChild(ifrm);
+            }
             
             function shareOnFacebook(){
                 const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://postolovski.github.io/social-media-testing/';
-                window.open(navUrl , '_blank');
+                // window.open(navUrl , '_blank');
+                prepareFrame(navUrl);
             }
 
             function shareOnLinkedin() {
                 const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + 'https://postolovski.github.io/social-media-testing/';
-                window.open(navUrl , '_blank');
+                prepareFrame(navUrl);
             }
             fb.addEventListener('click', () => {
                 shareOnFacebook();
