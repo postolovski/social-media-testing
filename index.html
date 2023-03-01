@@ -11,6 +11,7 @@
     <meta property="og:type" content="video.movie" />
     <meta property="og:description" content="Perfect weekend getaway for lorem upsum dolor in some cases tolor too" />
     <meta property="og:image" content="coverImg.png" />
+    <meta property="twitter:image" content="coverImg.png" />
     <meta property="og:video" content="someVideo.mp4" />
     <meta property="og:video:tag" content="Video Tag Is Heree!!!!" />
 
@@ -25,38 +26,47 @@
 
         <button id="fb">Share on Facebook</button>
         <button id="li">Share on LinkedIn</button>
+        <button id="tw">Share on Twitter</button>
 
         <script>
             const fb = document.getElementById('fb');
             const li = document.getElementById('li');
+            const siteUrl = 'https://postolovski.github.io/social-media-testing/';
 
-            function prepareFrame(src) {
-                var ifrm = document.createElement("iframe");
-                ifrm.setAttribute("src", src);
-                ifrm.setAttribute("width", '300vh');
-                ifrm.setAttribute("height", '200vh');
-                ifrm.setAttribute("frameborder", '0');
-                ifrm.style.width = "640px";
-                ifrm.style.height = "480px";
-                document.body.appendChild(ifrm);
-            }
-            
             function shareOnFacebook(){
-                const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://postolovski.github.io/social-media-testing/';
-                // window.open(navUrl , '_blank');
-                prepareFrame(navUrl);
+                const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + siteUrl;
+                window.open(navUrl , '_blank');
             }
 
             function shareOnLinkedin() {
-                const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + 'https://postolovski.github.io/social-media-testing/';
-                prepareFrame(navUrl);
+                const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + siteUrl;
+                window.open(navUrl , '_blank');
             }
+
+            function shareOnTwitter() {
+                const navUrl = `http://twitter.com/share?text=Roberto's Text&url=${siteUrl}&hashtags=Cofenster,Roador`;
+                window.open(navUrl , '_blank');
+            }
+
+            function mobileShare() {
+                if(navigator.share) {
+                    navigator.share({
+                        title: 'Video Title',
+                        url: 'videoUrl'
+                    })
+                }
+            }
+
             fb.addEventListener('click', () => {
                 shareOnFacebook();
             });
 
             li.addEventListener('click', () => {
                 shareOnLinkedin();
+            });
+
+            tw.addEventListener('click', () => {
+                shareOnTwitter();
             });
             </script>
   </body>
