@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,64 +11,90 @@
     <meta property="og:title" content="The Real Nature of our Earth" />
     <meta property="og:type" content="video.movie" />
     <meta property="og:description" content="Perfect weekend getaway for lorem upsum dolor in some cases tolor too" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1677629828024-7793ff7d9403?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1677629828024-7793ff7d9403?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1677629828024-7793ff7d9403?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
     <meta property="og:video" content="someVideo.mp4" />
     <meta property="og:video:tag" content="Video Tag Is Heree!!!!" />
 
+    <!-- Twitter -->
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1677629828024-7793ff7d9403?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:site" content="@youtube">
+    <meta name="twitter:url" content='https://postolovski.github.io/social-media-testing/'>
+    <meta name="twitter:title" content="The Real Nature of our Earth">
+    <meta name="twitter:description"
+        content="How to use twitter Tweet composer for market website and youtube videos 2020 - How to Post Videos on TwitterDigital Marketing Training Tutorials BY Digital R...">
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/8zOTjSPlkXk/maxresdefault.jpg">
+    <meta name="twitter:app:name:iphone" content="YouTube">
+    <meta name="twitter:app:id:iphone" content="544007664">
+    <meta name="twitter:app:name:ipad" content="YouTube">
+    <meta name="twitter:app:id:ipad" content="544007664">
+    <meta name="twitter:app:url:iphone"
+        content="vnd.youtube://www.youtube.com/watch?v=8zOTjSPlkXk&amp;feature=applinks">
+    <meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=8zOTjSPlkXk&amp;feature=applinks">
+    <meta name="twitter:app:name:googleplay" content="YouTube">
+    <meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
+    <meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=8zOTjSPlkXk">
+    <meta name="twitter:player" content="https://www.youtube.com/embed/8zOTjSPlkXk">
+    <meta name="twitter:player:width" content="1280">
+    <meta name="twitter:player:height" content="720">
 
-  </head>
-  <body>
+
+</head>
+
+<body>
     <h1>This is the Real Nature</h1>
-      <video width="500px" height="auto" controls>
-          <source src="someVideo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <video width="500px" height="auto" controls>
+        <source src="someVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        <button id="fb">Share on Facebook</button>
-        <button id="li">Share on LinkedIn</button>
-        <button id="tw">Share on Twitter</button>
+    <button id="fb">Share on Facebook</button>
+    <button id="li">Share on LinkedIn</button>
+    <button id="tw">Share on Twitter</button>
 
-        <script>
-            const fb = document.getElementById('fb');
-            const li = document.getElementById('li');
-            const siteUrl = 'https://postolovski.github.io/social-media-testing/';
+    <script>
+        const fb = document.getElementById('fb');
+        const li = document.getElementById('li');
+        const siteUrl = 'https://postolovski.github.io/social-media-testing/';
 
-            function shareOnFacebook(){
-                const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + siteUrl;
-                window.open(navUrl , '_blank');
+        function shareOnFacebook() {
+            const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + siteUrl;
+            window.open(navUrl, '_blank');
+        }
+
+        function shareOnLinkedin() {
+            const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + siteUrl;
+            window.open(navUrl, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const navUrl = `http://twitter.com/share?text=Roberto's Text&url=${siteUrl}&hashtags=Cofenster,Roador`;
+            window.open(navUrl, '_blank');
+        }
+
+        function mobileShare() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Video Title',
+                    url: 'videoUrl'
+                })
             }
+        }
 
-            function shareOnLinkedin() {
-                const navUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + siteUrl;
-                window.open(navUrl , '_blank');
-            }
+        fb.addEventListener('click', () => {
+            shareOnFacebook();
+        });
 
-            function shareOnTwitter() {
-                const navUrl = `http://twitter.com/share?text=Roberto's Text&url=${siteUrl}&hashtags=Cofenster,Roador`;
-                window.open(navUrl , '_blank');
-            }
+        li.addEventListener('click', () => {
+            shareOnLinkedin();
+        });
 
-            function mobileShare() {
-                if(navigator.share) {
-                    navigator.share({
-                        title: 'Video Title',
-                        url: 'videoUrl'
-                    })
-                }
-            }
+        tw.addEventListener('click', () => {
+            shareOnTwitter();
+        });
+    </script>
+</body>
 
-            fb.addEventListener('click', () => {
-                shareOnFacebook();
-            });
-
-            li.addEventListener('click', () => {
-                shareOnLinkedin();
-            });
-
-            tw.addEventListener('click', () => {
-                shareOnTwitter();
-            });
-            </script>
-  </body>
 </html>
